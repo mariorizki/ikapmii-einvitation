@@ -3,10 +3,13 @@ import { db } from "../firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import RingLoader from "react-spinners/RingLoader";
+import Welcome from "../components/Welcome";
+import Header from "../components/Header";
 
 const Invitation = () => {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = useState(true);
   //   const usersCollectionRef = collection(db, "users");
   const fetchUsers = async () => {
     await getDocs(collection(db, "users")).then((querySnapshot) => {
@@ -30,7 +33,7 @@ const Invitation = () => {
 
   return (
     <>
-      <div className="text-[#FFC93C] bg-slate-900 h-[100vh] p-10 text-center flex justify-center gap-5 items-center flex-col">
+      <div className="text-[#FFC93C] bg-slate-900 h-[100vh] p-10  text-center flex justify-center gap-5 items-center flex-col">
         {loading ? (
           <>
             <RingLoader size={150} color="#FFC93C" />
@@ -38,21 +41,8 @@ const Invitation = () => {
           </>
         ) : (
           <>
-            <p className="uppercase tracking-widest">Join Us To</p>
-
-            <h1 className="text-2xl font-bold">
-              Reuni Akbar <br /> IKA-PMII Komfapsi
-            </h1>
-            <hr className="bg-[#FFC93C] w-24 -mt-1 mx-auto h-0.5 rounded border-0" />
-            <p className="uppercase tracking-wider text-sm">
-              tetaplah menginspirasi, jangan berhenti berkarya
-            </p>
-            <p className="italic">"Recall Reconnect Reinforce"</p>
-            <p className="tracking-wider">24 Desember 2022</p>
-            <h1 className="text-xl mt-4">Kepada Sahabat {name}</h1>
-            <button className=" text-sm font-medium py-1 px-3 border-[1px]  border-[#FFC93C]  mt-8 rounded-sm">
-              Buka Undangan
-            </button>
+            <Welcome name={name} isOpen={isOpen} setIsOpen={setIsOpen} />
+            <Header name={name} />
           </>
         )}
       </div>
