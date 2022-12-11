@@ -42,26 +42,29 @@ const Countdown = () => {
   });
 
   return (
-    <div className="bg-[#ffffff10] text-center backdrop-opacity-30 shadow-2xl rounded-lg p-4 grid grid-cols-7 ">
-      <section>
-        <p>{daysTimer}</p>
-        <p className="text-sm">Days</p>
-      </section>
-      <span className="text-3xl">:</span>
-      <section>
-        <p>{hoursTimer}</p>
-        <p className="text-sm">Hours</p>
-      </section>
-      <span className="text-3xl">:</span>
-      <section>
-        <p>{minutesTimer}</p>
-        <p className="text-sm">Minutes</p>
-      </section>
-      <span className="text-3xl">:</span>
-      <section>
-        <p>{secondsTimer}</p>
-        <p className="text-sm">Seconds</p>
-      </section>
+    <div>
+      <h1 className="font-bold text-2xl italic">Countdown</h1>
+      <div className="bg-[#ffffff10] text-center backdrop-opacity-30 shadow-2xl rounded-lg p-4 grid grid-cols-7 ">
+        <section>
+          <p>{daysTimer}</p>
+          <p className="text-xs">Days</p>
+        </section>
+        <span className="text-3xl">:</span>
+        <section>
+          <p>{hoursTimer}</p>
+          <p className="text-xs">Hours</p>
+        </section>
+        <span className="text-3xl">:</span>
+        <section>
+          <p>{minutesTimer}</p>
+          <p className="text-xs">Minutes</p>
+        </section>
+        <span className="text-3xl">:</span>
+        <section>
+          <p>{secondsTimer}</p>
+          <p className="text-xs">Seconds</p>
+        </section>
+      </div>
     </div>
   );
 };
