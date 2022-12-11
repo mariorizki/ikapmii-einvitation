@@ -33,11 +33,13 @@ const Invitation = () => {
 
   return (
     <>
-      <div className="text-[#FFC93C] bg-slate-900 h-[100vh]  text-center flex justify-center gap-5 items-center flex-col">
+      <div className="bg-slate-900 h-[100vh]  text-center flex justify-center gap-5 items-center flex-col">
         {loading ? (
           <>
             <RingLoader size={150} color="#FFC93C" />
-            <p className=" text-2xl opacity-50 mt-4">Loading...</p>
+            <p className="text-[#FFC93C] text-2xl opacity-50 mt-4">
+              Loading...
+            </p>
           </>
         ) : (
           <>
