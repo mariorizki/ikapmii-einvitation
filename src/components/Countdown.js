@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from 'react';
 
 const Countdown = () => {
   const [daysTimer, setDayTimer] = useState();
@@ -9,7 +9,7 @@ const Countdown = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countdownDate = new Date("December 24, 2022 09:00:00").getTime();
+    const countdownDate = new Date('December 24, 2022 09:00:00').getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -41,7 +41,29 @@ const Countdown = () => {
     };
   });
 
-  return <div>Countdown</div>;
+  return (
+    <div className="bg-[#ffffff10] text-center backdrop-opacity-30 shadow-2xl rounded-lg p-4 grid grid-cols-7 ">
+      <section>
+        <p>{daysTimer}</p>
+        <p className="text-sm">Days</p>
+      </section>
+      <span className="text-3xl">:</span>
+      <section>
+        <p>{hoursTimer}</p>
+        <p className="text-sm">Hours</p>
+      </section>
+      <span className="text-3xl">:</span>
+      <section>
+        <p>{minutesTimer}</p>
+        <p className="text-sm">Minutes</p>
+      </section>
+      <span className="text-3xl">:</span>
+      <section>
+        <p>{secondsTimer}</p>
+        <p className="text-sm">Seconds</p>
+      </section>
+    </div>
+  );
 };
 
 export default Countdown;

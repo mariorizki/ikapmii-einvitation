@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
-import { db } from "../firebase-config";
-import { collection, getDocs } from "firebase/firestore";
-import { useParams } from "react-router-dom";
-import RingLoader from "react-spinners/RingLoader";
-import Welcome from "../components/Welcome";
-import Header from "../components/Header";
+import { useEffect, useState } from 'react';
+import { db } from '../firebase-config';
+import { collection, getDocs } from 'firebase/firestore';
+import { useParams } from 'react-router-dom';
+import RingLoader from 'react-spinners/RingLoader';
+import Welcome from '../components/Welcome';
+import Header from '../components/Header';
 
 const Invitation = () => {
   const [users, setUsers] = useState([]);
@@ -12,7 +12,7 @@ const Invitation = () => {
   const [isOpen, setIsOpen] = useState(true);
   //   const usersCollectionRef = collection(db, "users");
   const fetchUsers = async () => {
-    await getDocs(collection(db, "users")).then((querySnapshot) => {
+    await getDocs(collection(db, 'users')).then((querySnapshot) => {
       const newData = querySnapshot.docs.map((doc) => ({
         ...doc.data(),
         id: doc.id,
@@ -33,7 +33,7 @@ const Invitation = () => {
 
   return (
     <>
-      <div className="text-[#FFC93C] bg-slate-900 h-[100vh] p-10  text-center flex justify-center gap-5 items-center flex-col">
+      <div className="text-[#FFC93C] bg-slate-900 h-[100vh]  text-center flex justify-center gap-5 items-center flex-col">
         {loading ? (
           <>
             <RingLoader size={150} color="#FFC93C" />
