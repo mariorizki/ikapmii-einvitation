@@ -91,7 +91,7 @@ const Details = () => {
                 src={require(`../img/${protocol.img}`)}
                 alt={protocol.img}
               />
-              <p>{protocol.title}</p>
+              <p className="text-sm">{protocol.title}</p>
             </div>
           </Zoom>
         ))}

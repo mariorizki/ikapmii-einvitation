@@ -25,6 +25,7 @@ const Comments = ({
           className="text-black outline-none p-2 rounded-md"
           placeholder="Tulis Aspirasi"
           rows="4"
+          value={commentInput}
         />
         <button
           type="submit"
@@ -34,18 +35,18 @@ const Comments = ({
         </button>
       </form>
 
-      <div>
+      <Zoom cascade>
         {comments.map((comment) => (
-          <Zoom key={comment.id}>
+          <div key={comment.id}>
             <div className="text-start bg-[#0F1744] rounded-md p-3 mt-2">
               <h1 className="text-xl font-marck font-bold text-amber-500">
                 {comment.owner}
               </h1>
               <p className="text-sm">{comment.comment}</p>
             </div>
-          </Zoom>
+          </div>
         ))}
-      </div>
+      </Zoom>
     </div>
   );
 };

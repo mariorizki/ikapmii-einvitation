@@ -6,6 +6,8 @@ import {
   addDoc,
   query,
   onSnapshot,
+  orderBy,
+  serverTimestamp,
 } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import RingLoader from 'react-spinners/RingLoader';
@@ -40,11 +42,16 @@ const Invitation = () => {
 
   const handleAddComment = async (e) => {
     e.preventDefault(e);
-    await addDoc(collection(db, 'comments'), {
-      comment: commentInput,
-      owner: name,
-    });
-    setCommentInput('');
+    if (commentInput !== '') {
+      await addDoc(collection(db, 'comments'), {
+        comment: commentInput,
+        owner: name,
+        timestamp: serverTimestamp(),
+      });
+      setCommentInput('');
+    } else {
+      alert('Teks tidak boleh kosong');
+    }
   };
 
   useEffect(() => {
@@ -52,7 +59,7 @@ const Invitation = () => {
   }, []);
 
   useEffect(() => {
-    const q = query(collection(db, 'comments'));
+    const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let dataArr = [];
       querySnapshot.forEach((doc) => {
