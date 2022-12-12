@@ -44,10 +44,9 @@ const Countdown = () => {
 
   return (
     <div>
-      <Lottie
-        animationData={require('../lottie/loader.json')}
-        style={{ height: 100, marginBottom: -50 }}
-      />
+      <h1 className="text-3xl font-marck font-bold text-amber-500">
+        Countdown
+      </h1>
       <div className=" text-center gap-x-2 grid grid-cols-4 ">
         <section className="bg-[#ffffff10] rounded-lg p-2 text-center backdrop-opacity-30 shadow-2xl">
           <p>{daysTimer}</p>

@@ -1,5 +1,5 @@
-import { map } from '@firebase/util';
 import React from 'react';
+import { Zoom } from 'react-awesome-reveal';
 
 const Comments = ({
   comments,
@@ -8,13 +8,23 @@ const Comments = ({
   handleAddComment,
 }) => {
   return (
-    <div>
-      <form onSubmit={handleAddComment}>
+    <div className="w-[90%] mt-10">
+      <Zoom>
+        <h1 className="text-3xl font-marck font-bold text-amber-500">
+          Aspirasi
+        </h1>
+      </Zoom>
+
+      <form
+        onSubmit={handleAddComment}
+        className="flex flex-col mt-5 p-3 bg-[#0F1744] rounded-md"
+      >
         <textarea
           type="text"
           onChange={(e) => setCommentInput(e.target.value)}
-          className="text-black outline-none"
+          className="text-black outline-none p-2 rounded-md"
           placeholder="Tulis Aspirasi"
+          rows="4"
         />
         <button
           type="submit"
@@ -23,12 +33,17 @@ const Comments = ({
           Submit
         </button>
       </form>
+
       <div>
         {comments.map((comment) => (
-          <div key={comment.id}>
-            <p>{comment.owner}</p>
-            <p>{comment.comment}</p>
-          </div>
+          <Zoom key={comment.id}>
+            <div className="text-start bg-[#0F1744] rounded-md p-3 mt-2">
+              <h1 className="text-xl font-marck font-bold text-amber-500">
+                {comment.owner}
+              </h1>
+              <p className="text-sm">{comment.comment}</p>
+            </div>
+          </Zoom>
         ))}
       </div>
     </div>
