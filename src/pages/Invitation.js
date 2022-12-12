@@ -36,12 +36,12 @@ const Invitation = () => {
     <>
       <div className="bg-[#060E31] text-center flex justify-center gap-5 items-center flex-col text-white">
         {loading ? (
-          <>
+          <div className="h-[100vh] flex justify-center items-center flex-col">
             <RingLoader size={150} color="#FFC93C" />
             <p className="text-[#FFC93C] text-2xl opacity-50 mt-4">
               Loading...
             </p>
-          </>
+          </div>
         ) : (
           <>
             <Welcome name={name} isOpen={isOpen} setIsOpen={setIsOpen} />
