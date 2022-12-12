@@ -1,7 +1,13 @@
 import React from 'react';
 import background from '../img/welcome-bg.jpg';
+import future from '../audio/future.mp3';
 
 const Welcome = ({ name, setIsOpen, isOpen }) => {
+  const music = new Audio(future);
+  const play = () => {
+    music.play();
+  };
+
   return (
     <div
       className={`bg-slate-900 text-white h-[100vh] flex flex-col justify-center px-2  gap-5 fixed left-0 z-50 w-full items-center transition-all	 ease-in-out duration-[2000ms] ${
@@ -29,7 +35,10 @@ const Welcome = ({ name, setIsOpen, isOpen }) => {
       </h1>
 
       <button
-        onClick={() => setIsOpen(false)}
+        onClick={() => {
+          play();
+          setIsOpen(false);
+        }}
         className="outline-none text-md text-white font-medium py-2 px-3 bg-amber-500  mt-4 rounded-md"
       >
         Buka Undangan
