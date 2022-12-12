@@ -49,22 +49,22 @@ const Countdown = () => {
         style={{ height: 100, marginBottom: -50 }}
       />
       <div className=" text-center gap-x-2 grid grid-cols-4 ">
-        <section className="bg-[#ffffff10] rounded-lg p-4 text-center backdrop-opacity-30 shadow-2xl">
+        <section className="bg-[#ffffff10] rounded-lg p-2 text-center backdrop-opacity-30 shadow-2xl">
           <p>{daysTimer}</p>
           <p className="text-xs">Days</p>
         </section>
 
-        <section className="bg-[#ffffff10] rounded-lg p-4 text-center backdrop-opacity-30 shadow-2xl">
+        <section className="bg-[#ffffff10] rounded-lg p-2 text-center backdrop-opacity-30 shadow-2xl">
           <p>{hoursTimer}</p>
           <p className="text-xs">Hours</p>
         </section>
 
-        <section className="bg-[#ffffff10] rounded-lg p-4 text-center backdrop-opacity-30 shadow-2xl">
+        <section className="bg-[#ffffff10] rounded-lg p-2 text-center backdrop-opacity-30 shadow-2xl">
           <p>{minutesTimer}</p>
           <p className="text-xs">Minutes</p>
         </section>
 
-        <section className="bg-[#ffffff10] rounded-lg p-4 text-center backdrop-opacity-30 shadow-2xl">
+        <section className="bg-[#ffffff10] rounded-lg p-2 text-center backdrop-opacity-30 shadow-2xl">
           <p>{secondsTimer}</p>
           <p className="text-xs">Seconds</p>
         </section>
