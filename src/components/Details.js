@@ -82,7 +82,7 @@ const Details = () => {
           </p>
         </div>
       </Zoom>
-      <div className="flex justify-center items-center flex-wrap gap-x-8">
+      <div className="flex justify-center items-center flex-col gap-x-8 md:flex-row md:flex-wrap">
         {protocols.map((protocol) => (
           <Zoom key={protocol.title}>
             <div className="flex flex-col justify-center items-center gap-y-2 mt-10">
