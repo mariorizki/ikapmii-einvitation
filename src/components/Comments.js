@@ -42,7 +42,7 @@ const Comments = ({
               <h1 className="text-xl font-marck font-bold text-amber-500">
                 {comment.owner}
               </h1>
-              <p className="text-sm">{comment.comment}</p>
+              <p className="text-sm whitespace-pre-line">{comment.comment}</p>
             </div>
           </div>
         ))}

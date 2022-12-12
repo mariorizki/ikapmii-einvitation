@@ -64,7 +64,7 @@ const Invitation = () => {
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let dataArr = [];
       querySnapshot.forEach((doc) => {
-        dataArr.push({ ...doc.data() });
+        dataArr.push({ ...doc.data(), id: doc.id });
       });
       setComments(dataArr);
     });
