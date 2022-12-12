@@ -17,8 +17,8 @@ const Header = ({ name }) => {
       <p className="mt-4 drop-shadow-lg">
         Assalamualaikum wr. wb. <br /> <br />
         Tanpa mengurangi rasa hormat, kami mengundang Sahabat{' '}
-        <span className="font-bold">{name} </span> untuk menghadiri acara temu
-        kangen akbar IKA PMII Komfapsi
+        <span className="font-bold text-amber-500">{name} </span> untuk
+        menghadiri acara temu kangen akbar IKA PMII Komfapsi
       </p>
       <Countdown />
     </div>
