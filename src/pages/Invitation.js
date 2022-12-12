@@ -1,16 +1,26 @@
 import { useEffect, useState } from 'react';
 import { db } from '../firebase-config';
-import { collection, getDocs } from 'firebase/firestore';
+import {
+  collection,
+  getDocs,
+  addDoc,
+  query,
+  onSnapshot,
+} from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import RingLoader from 'react-spinners/RingLoader';
 import Welcome from '../components/Welcome';
 import Header from '../components/Header';
 import Details from '../components/Details';
+import Comments from '../components/Comments';
 
 const Invitation = () => {
   const [users, setUsers] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [commentInput, setCommentInput] = useState('');
   const [loading, setLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(true);
+
   //   const usersCollectionRef = collection(db, "users");
   const fetchUsers = async () => {
     await getDocs(collection(db, 'users')).then((querySnapshot) => {
@@ -26,11 +36,34 @@ const Invitation = () => {
   const userId = useParams();
   const filteredUser = users.filter((user) => user.id === userId.id);
   const name = filteredUser[0]?.name;
-  console.log(users);
+  // console.log(users);
+
+  const handleAddComment = async (e) => {
+    e.preventDefault(e);
+    await addDoc(collection(db, 'comments'), {
+      comment: commentInput,
+      owner: name,
+    });
+    setCommentInput('');
+  };
 
   useEffect(() => {
     fetchUsers();
   }, []);
+
+  useEffect(() => {
+    const q = query(collection(db, 'comments'));
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      let dataArr = [];
+      querySnapshot.forEach((doc) => {
+        dataArr.push({ ...doc.data() });
+      });
+      setComments(dataArr);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  console.log(comments);
 
   return (
     <>
@@ -47,6 +80,12 @@ const Invitation = () => {
             <Welcome name={name} isOpen={isOpen} setIsOpen={setIsOpen} />
             <Header name={name} />
             <Details />
+            <Comments
+              comments={comments}
+              commentInput={commentInput}
+              setCommentInput={setCommentInput}
+              handleAddComment={handleAddComment}
+            />
           </>
         )}
       </div>
