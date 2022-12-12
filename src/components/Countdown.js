@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Lottie from 'lottie-react';
 
 const Countdown = () => {
   const [daysTimer, setDayTimer] = useState();
@@ -43,24 +44,27 @@ const Countdown = () => {
 
   return (
     <div>
-      <h1 className="font-bold text-2xl italic">Countdown</h1>
-      <div className="bg-[#ffffff10] text-center backdrop-opacity-30 shadow-2xl rounded-lg p-4 grid grid-cols-7 ">
-        <section>
+      <Lottie
+        animationData={require('../lottie/loader.json')}
+        style={{ height: 100, marginBottom: -50 }}
+      />
+      <div className=" text-center gap-x-2 grid grid-cols-4 ">
+        <section className="bg-[#ffffff10] rounded-lg p-4 text-center backdrop-opacity-30 shadow-2xl">
           <p>{daysTimer}</p>
           <p className="text-xs">Days</p>
         </section>
-        <span className="text-3xl">:</span>
-        <section>
+
+        <section className="bg-[#ffffff10] rounded-lg p-4 text-center backdrop-opacity-30 shadow-2xl">
           <p>{hoursTimer}</p>
           <p className="text-xs">Hours</p>
         </section>
-        <span className="text-3xl">:</span>
-        <section>
+
+        <section className="bg-[#ffffff10] rounded-lg p-4 text-center backdrop-opacity-30 shadow-2xl">
           <p>{minutesTimer}</p>
           <p className="text-xs">Minutes</p>
         </section>
-        <span className="text-3xl">:</span>
-        <section>
+
+        <section className="bg-[#ffffff10] rounded-lg p-4 text-center backdrop-opacity-30 shadow-2xl">
           <p>{secondsTimer}</p>
           <p className="text-xs">Seconds</p>
         </section>
