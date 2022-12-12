@@ -15,6 +15,7 @@ import Welcome from '../components/Welcome';
 import Header from '../components/Header';
 import Details from '../components/Details';
 import Comments from '../components/Comments';
+import Footer from '../components/Footer';
 
 const Invitation = () => {
   const [users, setUsers] = useState([]);
@@ -93,6 +94,7 @@ const Invitation = () => {
               setCommentInput={setCommentInput}
               handleAddComment={handleAddComment}
             />
+            <Footer />
           </>
         )}
       </div>
