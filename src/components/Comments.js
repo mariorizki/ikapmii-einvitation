@@ -38,7 +38,7 @@ const Comments = ({
       <Zoom cascade>
         {comments.map((comment) => (
           <div key={comment.timestamp}>
-            <div className="text-start bg-[#0F1744] rounded-md p-3 mt-2">
+            <div className="text-start bg-[#0F1744] rounded-md p-3 mt-2 overflow-x-auto">
               <h1 className="text-xl font-marck font-bold text-amber-500">
                 {comment.owner}
               </h1>
