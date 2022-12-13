@@ -39,6 +39,7 @@ const Invitation = () => {
   const userId = useParams();
   const filteredUser = users.filter((user) => user.id === userId.id);
   const name = filteredUser[0]?.name;
+  const gender = filteredUser[0]?.gender;
   // console.log(users);
 
   const handleAddComment = async (e) => {
@@ -85,8 +86,13 @@ const Invitation = () => {
           </div>
         ) : (
           <>
-            <Welcome name={name} isOpen={isOpen} setIsOpen={setIsOpen} />
-            <Header name={name} />
+            <Welcome
+              name={name}
+              isOpen={isOpen}
+              setIsOpen={setIsOpen}
+              gender={gender}
+            />
+            <Header name={name} gender={gender} />
             <Details />
             <Comments
               comments={comments}

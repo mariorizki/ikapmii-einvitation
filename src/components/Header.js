@@ -2,7 +2,7 @@ import React from 'react';
 import background from '../img/hero-bg.jpg';
 import Countdown from './Countdown';
 
-const Header = ({ name }) => {
+const Header = ({ name, gender }) => {
   return (
     <div
       className="h-[100vh] w-full flex justify-around items-center flex-col p-5 text-white"
@@ -16,7 +16,8 @@ const Header = ({ name }) => {
       {/* <p>We Joyfully Invite You to This Event</p> */}
       <p className="mt-4 drop-shadow-lg">
         Assalamualaikum wr. wb. <br /> <br />
-        Tanpa mengurangi rasa hormat, kami mengundang Sahabat{' '}
+        Tanpa mengurangi rasa hormat, kami mengundang{' '}
+        {gender.toLowerCase() === 'male' ? 'Sahabat ' : 'Sahabati '}
         <span className="font-bold text-amber-500">{name} </span> untuk
         menghadiri acara temu kangen akbar IKA PMII Komfapsi
       </p>

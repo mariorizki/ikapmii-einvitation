@@ -2,7 +2,7 @@ import React from 'react';
 import background from '../img/welcome-bg.jpg';
 import future from '../audio/future.mp3';
 
-const Welcome = ({ name, setIsOpen, isOpen }) => {
+const Welcome = ({ name, setIsOpen, isOpen, gender }) => {
   const music = new Audio(future);
   const play = () => {
     music.play();
@@ -29,7 +29,7 @@ const Welcome = ({ name, setIsOpen, isOpen }) => {
       <p className="italic">"Recall Reconnect Reinforce"</p>
       {/* <img loading="lazy" src={require('../img/logo.png')} alt="" /> */}
       <h1 className="mt-4">
-        Kepada Sahabat
+        Kepada {gender.toLowerCase() === 'male' ? 'Sahabat ' : 'Sahabati '}
         <br />
         <span className="text-amber-500 italic bolder">{name}</span>
       </h1>
