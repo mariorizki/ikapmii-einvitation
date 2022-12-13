@@ -1,5 +1,5 @@
 import React from 'react';
-import background from '../img/welcome-bg.jpg';
+
 import future from '../audio/future.mp3';
 
 const Welcome = ({ name, setIsOpen, isOpen, gender }) => {

@@ -39,10 +39,10 @@ const Comments = ({
         {comments.map((comment) => (
           <div key={comment.timestamp}>
             <div className="text-start bg-[#0F1744] rounded-md p-3 mt-2 overflow-x-auto">
-              <h1 className="text-xl font-marck font-bold text-amber-500">
+              <h1 className="text-sm font-bold text-amber-500">
                 {comment.owner}
               </h1>
-              <p className="text-sm whitespace-pre-line">{comment.comment}</p>
+              <p className="text-xs whitespace-pre-line">{comment.comment}</p>
             </div>
           </div>
         ))}

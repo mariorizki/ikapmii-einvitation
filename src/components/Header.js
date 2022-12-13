@@ -19,7 +19,8 @@ const Header = ({ name, gender }) => {
         Tanpa mengurangi rasa hormat, kami mengundang{' '}
         {gender.toLowerCase() === 'male' ? 'Sahabat ' : 'Sahabati '}
         <span className="font-bold text-amber-500">{name} </span> untuk
-        menghadiri acara temu kangen akbar IKA PMII Komfapsi
+        menghadiri acara temu kangen akbar IKA (Ikatan Keluarga Alumni) PMII
+        Komfapsi
       </p>
       <Countdown />
     </div>
