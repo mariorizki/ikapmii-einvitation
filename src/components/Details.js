@@ -1,6 +1,7 @@
 import React from 'react';
 import { Zoom, Bounce } from 'react-awesome-reveal';
 import Lottie from 'lottie-react';
+import Rekening from './Rekening';
 
 const protocols = [
   { title: 'Cuci Tangan', img: 'p-1.png' },
@@ -14,19 +15,33 @@ const Details = () => {
   return (
     <div className="p-7">
       <Zoom>
-        <p className="mt-10">
-          وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا
-          لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْ مَّوَدَّةً وَّرَحْمَةً
-          ۗاِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ
+        <p className="text-sm mt-5">
+          قَالَ الشَّيْخُ عَبْدُ اللهِ فِكْرِيْ بَاشَا (المُتَوَفَّى سَنَةَ ۱٢۰٧
+          هـ <br /> Syeikh Abdullah Fikri Basya (Wafat 1207 H)
+        </p>
+        <p className="mt-10 text-sm">
+          إِذَا نَامَ غِرٌّ فِـي دُجَى اللَّيْلِ فَاسْهَرْ # وَقُمْ لِلْمَعَالِي
+          وَالعَوَالِـي وَشَمِّرِ وَسَارِعْ إِلىَ مَا رُمْتَ مَا دُمْتَ قَادِرًا
+          # عَلَيْهِ فَإِنْ لَـمْ تُبْصِرِ النُجْحَ فَاصْبِرِ وَأَكْثِرْ مِنَ
+          الشُوْرَى فَإِنَّكَ إِنْ تُصِبْ # تَجِدْ مَـادِحًا أَوْ تُخْطِئِ
+          الرَأْيَ تُعْذَرِ وَعَوِّدْ مَقَالَ الصِدْقِ نَفْسَكَ وَارْضَهُ #
+          تُصَدَّقْ وَلَا تَرْكَنْ إِلـىَ قَوْلِ مُفْتَرِ وَلَا تَقْفُ زَلَّاتِ
+          العِبَــادِ تَعُدُّهَا # فَلَسْتَ عَلَـى هَذَا الوَرَى بِمُسَيْطِرِ
         </p>
       </Zoom>
       <Zoom>
-        <p className="mt-10 text-sm">
-          Dan diantara tanda - tanda kekuasaan-Nya ialah diciptakan-Nya untukmu
-          pasangan hidup dari jenismu sendiri supaya kamu mendapat ketenangan
-          hati dan dijadikan-Nya kasih sayang diantara kamu. Sesungguhnya yang
-          demikian itu menjadi tanda - tanda kebesaran-Nya bagi orang - orang
-          yang berfikir.
+        <p className="mt-10 text-xs">
+          Tatkala para pemuda lain tidur di malam yang kelam maka bangunlah
+          engkau. <br /> <br /> Bangunlah demi kemuliaan dan kejayaan, serta
+          singsingkanlah lengan bajumu. <br /> <br /> Segeralah menuju apa yang
+          kau dambakan selagi kau mampu melakukannya. Adapun jika kau belum
+          menemukan kesuksesan maka bersabarlah. <br /> <br /> Perbanyaklah
+          musyawarah karena jika kau benar, kau akan mendapatkan pujian, atau
+          kalau pun salah, kau akan dimaklumi. Biasakanlah dirimu untuk berkata
+          benar, dan cintailah perkataan benar. <br />
+          <br /> Kau akan dipercaya, dan janganlah condong kepada perkataan
+          dusta. Janganlah mengikuti kesalahan orang lain dan
+          menghitung-hitungnya. Karena kau bukanlah penguasa atas manusia.
         </p>
       </Zoom>
       <Zoom>
@@ -53,7 +68,7 @@ const Details = () => {
           </h1>
           <Lottie
             animationData={require('../lottie/location.json')}
-            className="h-[40px]"
+            className="h-[40px] mt-2"
           />
         </div>
       </Zoom>
@@ -62,7 +77,7 @@ const Details = () => {
           <p>Jl. TB Simatupang No.10, Cilandak</p>
           <p>Jakarta Selatan</p>
           <a
-            href="https://www.google.com/maps/place/Jl.+TB+Simatupang+No.10,+RT.2%2FRW.2,+Cilandak+Tim.,+Ps.+Minggu,+Kota+Jakarta+Selatan,+Daerah+Khusus+Ibukota+Jakarta+12560/@-6.2947759,106.786673,16.5z/data=!4m5!3m4!1s0x2e69f1f88b39ab11:0x24edb8690a522fac!8m2!3d-6.2918941!4d106.8164195"
+            href="https://www.google.com/maps/place/Restoran+Surgana+Rasa/@-6.3226423,106.6818635,19.25z/data=!4m13!1m7!3m6!1s0x2e69e5222585d333:0xd48ec748fd7cadb4!2sJl.+Raya+Rawa+Buntu+No.18,+Rw.+Buntu,+Kec.+Serpong,+Kota+Tangerang+Selatan,+Banten+15318!3b1!8m2!3d-6.322345!4d106.682703!3m4!1s0x2e69e57317a4c099:0xaeb263898d927de4!8m2!3d-6.322108!4d106.6825808"
             target="_blank"
           >
             <button className="outline-none text-md text-white font-medium py-2 px-3 bg-amber-500  mt-4 rounded-md">
@@ -70,6 +85,9 @@ const Details = () => {
             </button>
           </a>
         </div>
+      </Zoom>
+      <Zoom>
+        <Rekening />
       </Zoom>
       <Zoom>
         <div className="mt-16">
