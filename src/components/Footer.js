@@ -11,7 +11,7 @@ const Footer = () => {
             sahabat/i berkenan hadir. Atas waktu dan kehadirannya kami ucapkan
             terima kasih.
           </p>
-          <p className="text-sm">Wassalamualaikum Wr. Wb.</p>
+          <p className="text-sm mt-2">Wassalamualaikum Wr. Wb.</p>
         </div>
       </Zoom>
       <div className="bg-[#0F1744] w-full p-2 mt-16">
