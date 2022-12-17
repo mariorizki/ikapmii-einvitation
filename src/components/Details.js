@@ -74,10 +74,10 @@ const Details = () => {
       </Zoom>
       <Zoom>
         <div className="mt-2">
-          <p>Jl. TB Simatupang No.10, Cilandak</p>
-          <p>Jakarta Selatan</p>
+          <p>Pusat TIK Nasional</p>
+          <p>Pisangan, Kec. Ciputat Timur, Tangerang Selatan, Banten.</p>
           <a
-            href="https://www.google.com/maps/place/Restoran+Surgana+Rasa/@-6.3226423,106.6818635,19.25z/data=!4m13!1m7!3m6!1s0x2e69e5222585d333:0xd48ec748fd7cadb4!2sJl.+Raya+Rawa+Buntu+No.18,+Rw.+Buntu,+Kec.+Serpong,+Kota+Tangerang+Selatan,+Banten+15318!3b1!8m2!3d-6.322345!4d106.682703!3m4!1s0x2e69e57317a4c099:0xaeb263898d927de4!8m2!3d-6.322108!4d106.6825808"
+            href="https://www.google.com/maps/place/Pusat+TIK+Nasional/@-6.3088429,106.7584614,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x269f9d2846e7c539!8m2!3d-6.3088367!4d106.7584034"
             target="_blank"
           >
             <button className="outline-none text-md text-white font-medium py-2 px-3 bg-amber-500  mt-4 rounded-md">

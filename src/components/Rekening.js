@@ -12,14 +12,31 @@ const Rekening = () => {
         <img src={require('../img/bca.png')} alt="" />
       </div>
       <div className="flex items-center justify-center gap-x-4">
-        <p className="text-sm">No Rekening: 6042079797</p>
-        <CopyToClipboard text="6042079797">
+        <p className="text-sm">No Rekening: 7111453059</p>
+        <CopyToClipboard text="7111453059">
           <button className="bg-slate-700 p-1.5 rounded-md text-xs">
             Copy Number
           </button>
         </CopyToClipboard>
       </div>
-      <p className="text-sm">A/n Mohammad Taufik Aziz</p>
+      <p className="text-sm">A/n Ayu Shafa</p>
+
+      <div className="bg-white p-2 rounded-md w-[200px]">
+        <img src={require('../img/dana.png')} alt="" />
+      </div>
+      <div className="flex items-center justify-center gap-x-4">
+        <p className="text-sm">085889510914</p>
+        <CopyToClipboard text="085889510914">
+          <button className="bg-slate-700 p-1.5 rounded-md text-xs">
+            Copy Number
+          </button>
+        </CopyToClipboard>
+      </div>
+      <p className="text-sm">A/n Ayu Shafa</p>
+      <p className="text-sm mt-3">
+        CP Acara: 081381453525 <br />
+        Mohammad Taufik Aziz (Boling)
+      </p>
     </div>
   );
 };
