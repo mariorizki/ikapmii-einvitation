@@ -8,8 +8,8 @@ const Footer = () => {
         <div className="p-7">
           <p className="mt-10 text-sm">
             Merupakan suatu kehormatan dan kebanggaan bagi kami apabila
-            sahabat/i berkenan hadir. Atas waktu dan kehadirannya kami ucapkan
-            terima kasih.
+            sahabat/i berkenan hadir. <br />
+            Atas waktu dan kehadirannya kami ucapkan terima kasih.
           </p>
           <p className="text-sm mt-2">Wassalamualaikum Wr. Wb.</p>
         </div>
