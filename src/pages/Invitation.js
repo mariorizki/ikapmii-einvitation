@@ -8,6 +8,8 @@ import {
   onSnapshot,
   orderBy,
   serverTimestamp,
+  doc,
+  getDoc,
 } from 'firebase/firestore';
 import { useParams } from 'react-router-dom';
 import RingLoader from 'react-spinners/RingLoader';
@@ -18,28 +20,50 @@ import Comments from '../components/Comments';
 import Footer from '../components/Footer';
 
 const Invitation = () => {
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   const [comments, setComments] = useState([]);
   const [commentInput, setCommentInput] = useState('');
   const [loading, setLoading] = useState(true);
   const [isOpen, setIsOpen] = useState(true);
 
-  //   const usersCollectionRef = collection(db, "users");
-  const fetchUsers = async () => {
-    await getDocs(collection(db, 'users')).then((querySnapshot) => {
-      const newData = querySnapshot.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setUsers(newData);
+  const [user, setUser] = useState({});
+  const id = useParams();
+  // console.log(id.id);
+  const docRef = doc(db, 'users', id.id);
+
+  const fetchUserById = async () => {
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
       setLoading(false);
-    });
+      setUser({ ...docSnap.data(), id: docSnap.id });
+    }
   };
 
+  useEffect(() => {
+    fetchUserById();
+  }, []);
+
+  //   const usersCollectionRef = collection(db, "users");
+  // const fetchUsers = async () => {
+  //   await getDocs(collection(db, 'users')).then((querySnapshot) => {
+  //     const newData = querySnapshot.docs.map((doc) => ({
+  //       ...doc.data(),
+  //       id: doc.id,
+  //     }));
+  //     setUsers(newData);
+  //     setLoading(false);
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   fetchUsers();
+  // }, []);
+
   const userId = useParams();
-  const filteredUser = users.filter((user) => user.id === userId.id);
-  const name = filteredUser[0]?.name;
-  const gender = filteredUser[0]?.gender;
+  // const filteredUser = users.filter((user) => user.id === userId.id);
+  const name = user?.name;
+  const gender = user?.gender;
   // console.log(users);
 
   const handleAddComment = async (e) => {
@@ -57,10 +81,6 @@ const Invitation = () => {
   };
 
   useEffect(() => {
-    fetchUsers();
-  }, []);
-
-  useEffect(() => {
     const q = query(collection(db, 'comments'), orderBy('timestamp', 'desc'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let dataArr = [];
@@ -72,7 +92,7 @@ const Invitation = () => {
     return () => unsubscribe();
   }, []);
 
-  console.log(comments);
+  // console.log(comments);
 
   return (
     <>
