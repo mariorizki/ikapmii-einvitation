@@ -11,13 +11,15 @@ import {
   doc,
   getDoc,
 } from 'firebase/firestore';
-import { useParams } from 'react-router-dom';
+import { Route, Routes, useParams } from 'react-router-dom';
 import RingLoader from 'react-spinners/RingLoader';
 import Welcome from '../components/Welcome';
 import Header from '../components/Header';
 import Details from '../components/Details';
 import Comments from '../components/Comments';
 import Footer from '../components/Footer';
+import Vote from './Vote';
+import SubmitVote from './SubmitVote';
 
 const Invitation = () => {
   // const [users, setUsers] = useState([]);
@@ -44,6 +46,8 @@ const Invitation = () => {
     fetchUserById();
   }, []);
 
+  //////////////////////////
+
   //   const usersCollectionRef = collection(db, "users");
   // const fetchUsers = async () => {
   //   await getDocs(collection(db, 'users')).then((querySnapshot) => {
@@ -64,7 +68,9 @@ const Invitation = () => {
   // const filteredUser = users.filter((user) => user.id === userId.id);
   const name = user?.name;
   const gender = user?.gender;
-  // console.log(users);
+  const attendance = user?.attendance;
+
+  // console.log(user);
 
   const handleAddComment = async (e) => {
     e.preventDefault(e);
@@ -112,7 +118,12 @@ const Invitation = () => {
               setIsOpen={setIsOpen}
               gender={gender}
             />
-            <Header name={name} gender={gender} />
+            <Header
+              name={name}
+              gender={gender}
+              attendance={attendance}
+              userId={userId}
+            />
             <Details />
             <Comments
               comments={comments}
